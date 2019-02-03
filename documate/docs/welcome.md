@@ -1,3 +1,7 @@
-# Welcome to Packem
+# Welcome
 
-Packem is a compiled JavaScript module bundler built specifically to make development with Web tools an easy task. Packem is primarily written in Rust and thus gains many features like a strong type system, portable executables and a blazing fast concurrency model. What makes it unique is that most concepts of common JavaScript module bundlers (c. [#01](/)) do not fit in which necessates a newer implementation of the same idea using different approaches while still maintaining the basics.
+Edit `/documate/docs/welcome.md` (in the root directory of your project) to change this content. You may also simply delete it and start fresh by creating new Markdown files in the `/documate/docs/` directory and adding them to the `navs.DOCS` property of the `/documate/config.js` file.
+
+For more details check out our [docs](https://documate.netlify.com/docs/).
+
+Happy *documating*!
