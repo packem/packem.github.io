@@ -18,8 +18,8 @@ module.exports = {
 
   // Main theme colors
   themeColors: {
-    primary: "#61dafb",
-    secondary: "#282c34"
+    primary: "#f7bd35",
+    secondary: "#14120d"
   },
 
   // Syntax highlighting theme in code blocks

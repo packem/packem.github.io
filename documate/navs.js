@@ -5,22 +5,46 @@
 module.exports = {
   TOPNAV: {
     Home: "./index.html",
-    Docs: "./docs/"
+    Docs: "./docs/",
+    // Blog: "./blog.html",
   },
   DOCS: {
     Welcome: "./docs/welcome.md",
-    Changelog: "./docs/welcome.md",
     "Getting Started": {
-      "Installation": "./docs/welcome.md",
-      "Getting Started": "./docs/welcome.md",
-      "Resources": "./docs/welcome.md"
+      "Getting Started": "./docs/getting-started/getting-started.md",
+      "Installation & Setup": "./docs/getting-started/installation-setup.md",
+      "Configuration": "./docs/getting-started/configuration.md",
+      "Extending our example project": "./docs/getting-started/extending-example-project.md",
+      "Creating a production build": "./docs/getting-started/creating-production-build.md",
     },
-    "Main Concepts": {
-      "Diff Updates": "./docs/welcome.md",
-      "Bi-lingual Plugin System": "./docs/welcome.md",
-      "GPU Accelerated Builds": "./docs/welcome.md",
-      "Caching System": "./docs/welcome.md",
-      "PackemEvent SubModule": "./docs/welcome.md",
+    "Using the API": {
+      "Overview": "./docs/welcome.md",
+      "Using plugins": "./docs/welcome.md",
+      "Creating custom plugins": "./docs/welcome.md",
+      "Composing native plugins": "./docs/welcome.md",
+      "Hooking onto PackemEvent": "./docs/welcome.md",
+      "Optimizations and build control": "./docs/welcome.md"
+    },
+    "Advanced Guide": {
+      "Overview": "./docs/welcome.md",
+      "Why Rust?": "./docs/welcome.md",
+      "Static Module Elision": "./docs/welcome.md",
+      "The ModuleGraph": "./docs/welcome.md",
+      // "Diff Updates": "./docs/welcome.md",
+      // "Batched Diff Updates": "./docs/welcome.md",
+      "Compilem": "./docs/advanced-guide/compilem.md",
+      "Regular & native plugins": "./docs/welcome.md",
+      "Caching system": "./docs/welcome.md",
+      "The PackemEvent submodule": "./docs/welcome.md",
+      "Edge cases": "./docs/welcome.md",
+    },
+    "Plugin System": {
+      "Overview": "./docs/welcome.md",
+      "Utilizing plugins in your toolchain": "./docs/welcome.md",
+      "Creating custom plugins": "./docs/welcome.md",
+      "Composing native plugins": "./docs/welcome.md",
+      "Hooking onto PackemEvent": "./docs/welcome.md",
+      "Optimizations and build control": "./docs/welcome.md"
     },
     "Integrations": {
       "Starter Packs": "./docs/welcome.md",
@@ -29,13 +53,6 @@ module.exports = {
       "Integrating Packem with TypeScript": "./docs/welcome.md",
       "Integrating Packem with Vue": "./docs/welcome.md",
       "Integrating Packem with Angular": "./docs/welcome.md",
-    },
-    "Plugin System": {
-      "Using plugins": "./docs/welcome.md",
-      "Creating custom plugins": "./docs/welcome.md",
-      "Composition with native interfaces": "./docs/welcome.md",
-      "Hooking onto PackemEvent": "./docs/welcome.md",
-      "Optimizations and build control": "./docs/welcome.md"
     }
   }
 };
