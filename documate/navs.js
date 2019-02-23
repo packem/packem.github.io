@@ -12,7 +12,7 @@ module.exports = {
     Welcome: "./docs/welcome.md",
     "Getting Started": {
       "Getting Started": "./docs/getting-started/getting-started.md",
-      "Installation & Setup": "./docs/getting-started/installation-setup.md",
+      "Installation &amp; Setup": "./docs/getting-started/installation-setup.md",
       "Configuration": "./docs/getting-started/configuration.md",
       "Extending our example project": "./docs/getting-started/extending-example-project.md",
       "Creating a production build": "./docs/getting-started/creating-production-build.md",
