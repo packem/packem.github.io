@@ -12,7 +12,7 @@ module.exports = {
     Welcome: "./docs/welcome.md",
     "Getting Started": {
       "Getting Started": "./docs/getting-started/getting-started.md",
-      "Installation &amp; Setup": "./docs/getting-started/installation-setup.md",
+      "Installation & Setup": "./docs/getting-started/installation-setup.md",
       "Configuration": "./docs/getting-started/configuration.md",
       "Extending our example project": "./docs/getting-started/extending-example-project.md",
       "Creating a production build": "./docs/getting-started/creating-production-build.md",
@@ -30,8 +30,6 @@ module.exports = {
       "Why Rust?": "./docs/welcome.md",
       "Static Module Elision": "./docs/welcome.md",
       "The ModuleGraph": "./docs/welcome.md",
-      // "Diff Updates": "./docs/welcome.md",
-      // "Batched Diff Updates": "./docs/welcome.md",
       "Compilem": "./docs/advanced-guide/compilem.md",
       "Regular & native plugins": "./docs/welcome.md",
       "Caching system": "./docs/welcome.md",
