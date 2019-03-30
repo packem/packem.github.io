@@ -1,10 +1,10 @@
 {
-  "name": "react-website",
-  "description": "React website",
+  "name": "packem-website",
+  "description": "Packem website",
   "version": "0.0.1",
   "private": true,
   "bugs": {
-    "url": "https://github.com/reactjs/reactjs.org"
+    "url": "https://github.com/packem/packem.github.io"
   },
   "dependencies": {
     "babel-eslint": "^8.0.1",
@@ -68,12 +68,13 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reactjs/reactjs.org.git"
+    "url": "git+https://github.com/packem/packem.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
     "check-all": "npm-run-all prettier generate-ids --parallel lint flow",
     "ci-check": "npm-run-all prettier:diff --parallel lint flow",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "dev": "gatsby develop -H 0.0.0.0",
     "flow": "flow",
     "format:source": "prettier --config .prettierrc --write \"{gatsby-*.js,{flow-typed,plugins,src}/**/*.js}\"",

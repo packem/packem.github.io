@@ -40,12 +40,12 @@ class Home extends Component {
   render() {
     const {babelLoaded} = this.state;
     const {data, location} = this.props;
-    const {codeExamples, examples, marketing} = data;
+    const {examples, marketing} = data;
 
-    const code = codeExamples.edges.reduce((lookup, {node}) => {
-      lookup[node.mdAbsolutePath] = node;
-      return lookup;
-    }, {});
+    // const code = codeExamples.edges.reduce((lookup, {node}) => {
+    //   lookup[node.mdAbsolutePath] = node;
+    //   return lookup;
+    // }, {});
 
     return (
       <Layout location={location}>
@@ -254,7 +254,10 @@ class Home extends Component {
                 }}
               />
               <section css={sectionStyles}>
-                <div id="examples">
+
+              {/* Don't query `allExampleCode`. This section ought to be replaced. */}
+
+                {/* <div id="examples">
                   {examples.edges.map(({node}, index) => {
                     const snippet = code[node.fileAbsolutePath];
                     return (
@@ -269,7 +272,7 @@ class Home extends Component {
                       </CodeExample>
                     );
                   })}
-                </div>
+                </div> */}
               </section>
             </div>
           </Container>
