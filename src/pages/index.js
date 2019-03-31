@@ -7,7 +7,7 @@
 import ButtonLink from 'components/ButtonLink';
 import Container from 'components/Container';
 import Flex from 'components/Flex';
-import CodeExample from 'components/CodeExample';
+// import CodeExample from 'components/CodeExample';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {graphql} from 'gatsby';
