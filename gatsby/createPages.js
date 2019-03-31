@@ -52,11 +52,12 @@ module.exports = async ({graphql, actions}) => {
   allMarkdown.data.allMarkdownRemark.edges.forEach(edge => {
     const slug = edge.node.fields.slug;
 
-    if (slug === 'docs/error-decoder.html') {
-      // No-op so far as markdown templates go.
-      // Error codes are managed by a page in src/pages
-      // (which gets created by Gatsby during a separate phase).
-    } else if (
+    // if (slug === 'docs/error-decoder.html') {
+    //   // No-op so far as markdown templates go.
+    //   // Error codes are managed by a page in src/pages
+    //   // (which gets created by Gatsby during a separate phase).
+    // } else
+    if (
       // slug.includes('blog/') ||
       // slug.includes('community/') ||
       // slug.includes('contributing/') ||

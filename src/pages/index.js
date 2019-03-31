@@ -152,8 +152,9 @@ class Home extends Component {
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
-                      <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                      {/* Update link */}
+                      <ButtonLink to="/docs/" type="secondary">
+                        Advanced Guide
                       </ButtonLink>
                     </CtaItem>
                   </Flex>

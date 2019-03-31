@@ -25,6 +25,6 @@ exports.sourceNodes = async ({actions}) => {
       }`,
     );
 
-    process.exit(1);
+    // process.exit(1);
   }
 };
