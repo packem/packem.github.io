@@ -12,7 +12,7 @@ import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
 import React from 'react';
 import {colors, media} from 'theme';
-import {sectionListCommunity, sectionListDocs} from 'utils/sectionList';
+import {sectionListDocs} from 'utils/sectionList';
 
 import ossLogoPng from 'images/oss_logo.png';
 
@@ -73,7 +73,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             })}
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Channels</MetaTitle>
+            <MetaTitle onDark={true}>External Links</MetaTitle>
             <ExternalFooterLink
               href="https://github.com/packem/packem"
               target="_blank"
@@ -131,7 +131,8 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               paddingTop: 40,
             },
           }}>
-          <a
+          {/* Maybe add main sponsor right here! */}
+          {/* <a
             href="https://code.facebook.com/projects/"
             target="_blank"
             rel="noopener">
@@ -143,7 +144,7 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               }}
               src={ossLogoPng}
             />
-          </a>
+          </a> */}
           <p
             css={{
               color: colors.subtleOnDark,

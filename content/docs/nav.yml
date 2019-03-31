@@ -4,7 +4,7 @@
 #   isOrdered: true # Whether to number the sublinks or not
 #   items:
 #       - id: hooks-intro # filename to check (for docs)
-#         title: Introducing Hooks (title to appear)
+#         title: Introducing Hooks (title to appear in sidebar)
 #         subitems:
 #           - id: your-file # Link to file
 #             title: ASubTitle # SubItem title

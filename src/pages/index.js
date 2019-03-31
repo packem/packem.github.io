@@ -14,28 +14,11 @@ import {graphql} from 'gatsby';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
 import {colors, media, sharedStyles} from 'theme';
-import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
-import {babelURL} from 'site-constants';
-import logoWhiteSvg from 'icons/logo-white.svg';
+// Needs to be white & SVG
+// import logoWhiteSvg from 'icons/packem-logo.png';
 
 class Home extends Component {
-  state = {
-    babelLoaded: false,
-  };
-
-  componentDidMount() {
-    loadScript(babelURL).then(
-      () => {
-        this.setState({
-          babelLoaded: true,
-        });
-      },
-      error => {
-        console.error('Babel failed to load.');
-      },
-    );
-  }
 
   render() {
     const {babelLoaded} = this.state;
@@ -69,27 +52,28 @@ class Home extends Component {
                   paddingBottom: 70,
                 },
 
-                [media.greaterThan('xlarge')]: {
-                  paddingTop: 95,
-                  paddingBottom: 85,
-                  maxWidth: 1500, // Positioning of background logo
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  position: 'relative',
-                  '::before': {
-                    content: ' ',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    backgroundImage: `url(${logoWhiteSvg})`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: '100% 100px',
-                    backgroundSize: '50% auto',
-                    opacity: 0.05,
-                  },
-                },
+                // Large React logo that appears in the main header
+                // [media.greaterThan('xlarge')]: {
+                //   paddingTop: 95,
+                //   paddingBottom: 85,
+                //   maxWidth: 1500, // Positioning of background logo
+                //   marginLeft: 'auto',
+                //   marginRight: 'auto',
+                //   position: 'relative',
+                //   '::before': {
+                //     content: ' ',
+                //     position: 'absolute',
+                //     top: 0,
+                //     left: 0,
+                //     bottom: 0,
+                //     right: 0,
+                //     backgroundImage: `url(${logoWhiteSvg})`,
+                //     backgroundRepeat: 'no-repeat',
+                //     backgroundPosition: '100% 100px',
+                //     backgroundSize: '50% auto',
+                //     opacity: 0.05,
+                //   },
+                // },
               }}>
               <div
                 css={{

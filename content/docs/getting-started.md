@@ -30,7 +30,3 @@ yarn add --global packem
 It is highly recommended to install Packem globally so that any version update could allow multiple Packem projects to compile using the latest installed version. You can check more about the versionings [here](/versions). Alternatively, you could install it locally then use a package runner like [npx](https://github.com/zkat/npx) to run Packem on your project.
 
 Another guide on installing Packem locally is expected soon.
-
-> Note
->
-> Do not delete or move any OS-specific binaries installed.
