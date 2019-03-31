@@ -21,9 +21,8 @@ import createOgUrl from 'utils/createOgUrl';
 class Home extends Component {
 
   render() {
-    const {babelLoaded} = this.state;
     const {data, location} = this.props;
-    const {examples, marketing} = data;
+    const {marketing} = data;
 
     // const code = codeExamples.edges.reduce((lookup, {node}) => {
     //   lookup[node.mdAbsolutePath] = node;
