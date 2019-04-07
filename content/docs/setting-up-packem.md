@@ -13,11 +13,11 @@ This section outlines basic configuration options to get you started. Based off 
 
 After installing Packem through the [various methods](/docs/getting-started), setting up Packem will be a matter of adding a single YAML file at the root of your project. Packem needs this configuration file to tell exactly what and how your code should be bundled.
 
-## Why static configuration? Why YAML?
+## Why static configuration? Why YAML? {#why-static-configuration-why-yaml}
 
 A static configuration is **enough to declaratively tell Packem what to do** in your project so you have control of how Packem should run and what options to make that best suits your project's needs.
 
-## Creating the configuration file
+## Creating the configuration file {#creating-the-configuration-file}
 
 In the root of your project's file structure, add a new file and name it `packem.config.yml`. This file will contain all the necessary configuration options for your project. In this file, copy the following content into it and save.
 
