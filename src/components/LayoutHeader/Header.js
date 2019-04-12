@@ -192,7 +192,7 @@ const Header = ({location}: {location: Location}) => (
                 display: 'none',
               },
             }}
-            href="https://github.com/facebook/react/"
+            href="https://github.com/packem/packem"
             target="_blank"
             rel="noopener">
             GitHub
