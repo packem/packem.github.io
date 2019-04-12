@@ -1,8 +1,8 @@
 ---
-title: Minimal Configuration
+title: Safe Binaries
 order: 1
 ---
 
-Forget about all the fuss it takes to configure Webpack properly and the low flexibility *Zero Config* offers. Packem uses a lightweight YAML-based static configuration.
+Built-in OS-specific binaries are utilized as safe C++ node addons in Packem's core. This creates a non-breaking environment for Packem to bundle properly. Plugins, features and optimizers can safely import low-level APIs to allow __close-to-the-metal__ integration with the platform.
 
-Most of the defaults are copied over to your configuration file so you do not need to make unnecessary shifts.
+This gives the advantage point of using Rust's OS threads.

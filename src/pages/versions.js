@@ -25,7 +25,7 @@ const Versions = ({location}: Props) => (
       <div css={sharedStyles.articleLayout.container}>
         <div css={sharedStyles.articleLayout.content}>
           <Header>Packem Versions Changelog</Header>
-          <TitleAndMetaTags title="React - Versions" />
+          <TitleAndMetaTags title="Packem - Versions" />
           <div css={sharedStyles.markdown}>
             <p>
               Documentation for recent releases can be found in the links below.

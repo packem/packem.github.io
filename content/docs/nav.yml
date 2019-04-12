@@ -9,22 +9,26 @@
 #           - id: your-file # Link to file
 #             title: ASubTitle # SubItem title
 
-- title: Installation
+- title: Introduction
   items:
+    - id: roadmap
+      title: Roadmap
     - id: getting-started
       title: Getting Started
-    - id: setting-up-packem
-      title: Setting up Packem
     - id: extended-configurations
       title: Extended Configurations
 - title: Plugin System
   items:
-    - id: getting-started
-      title: Getting Started
+    - id: plugin-system
+      title: Plugin System
+    - id: common-plugins
+      title: Common Plugins
+    - id: advanced-plugin-apis
+      title: Advanced Plugin APIs
 - title: Advanced Guide
   items:
-    - id: getting-started
-      title: Getting Started
+    - id: code-splitting
+      title: Code Splitting
 # - title: Main Concepts
 #   isOrdered: true
 # - title: Advanced Guides
