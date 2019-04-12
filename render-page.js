@@ -1021,7 +1021,7 @@ module.exports = [{"title":"Introduction","items":[{"id":"roadmap","title":"Road
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"0.1.0","changelog":"https://github.com/facebook/react/blob/master/CHANGELOG.md#1680-february-6-2019"}]
+module.exports = [{"title":"0.1.0","changelog":"https://github.com/packem/packem/blob/master/CHANGELOG.md"}]
 
 /***/ }),
 
@@ -6315,7 +6315,7 @@ var Header = function Header(_ref) {
     }, _Object$assign2[theme__WEBPACK_IMPORTED_MODULE_8__["media"].lessThan('large')] = {
       display: 'none'
     }, _Object$assign2)),
-    href: "https://github.com/facebook/react/",
+    href: "https://github.com/packem/packem",
     target: "_blank",
     rel: "noopener"
   }, "GitHub", Glamor.createElement(templates_components_ExternalLinkSvg__WEBPACK_IMPORTED_MODULE_10__["default"], {
