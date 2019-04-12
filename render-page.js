@@ -374,7 +374,7 @@ exports.wrapRootElement = true;
 /*! exports provided: pages, dataPaths, default */
 /***/ (function(module) {
 
-module.exports = {"pages":[{"componentChunkName":"component---src-pages-index-js","jsonName":"index","path":"/"},{"componentChunkName":"component---src-pages-404-js","jsonName":"404-html-516","path":"/404.html"},{"componentChunkName":"component---src-pages-404-js","jsonName":"404-22d","path":"/404/"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-extended-configurations-html-b9b","path":"/docs/extended-configurations.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-getting-started-html-f09","path":"/docs/getting-started.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-setting-up-packem-html-e6b","path":"/docs/setting-up-packem.html"},{"componentChunkName":"component---src-pages-versions-js","jsonName":"versions-724","path":"/versions/"}],"dataPaths":{"404-22d":"820/path---404-22-d-bce-0SUcWyAf8ecbYDsMhQkEfPzV8","404-html-516":"285/path---404-html-516-62a-0SUcWyAf8ecbYDsMhQkEfPzV8","dev-404-page-5f9":"386/path---dev-404-page-5-f-9-fab-0SUcWyAf8ecbYDsMhQkEfPzV8","docs-extended-configurations-html-b9b":"796/path---docs-extended-configurations-html-b-9-b-e8e-oTlXyRp0mcMMu24YZQJxzRI","docs-getting-started-html-f09":"836/path---docs-getting-started-html-f-09-04d-anrS97DZ82QZkyssnGUyeeEWCk","docs-setting-up-packem-html-e6b":"484/path---docs-setting-up-packem-html-e-6-b-40c-PebacOJREvXYiUiflAJOYM3pFQ","index":"979/path---index-6a9-nAcIQGKu8t9NnNZE8y9ch3aOFes","versions-724":"726/path---versions-724-e4e-0SUcWyAf8ecbYDsMhQkEfPzV8"}};
+module.exports = {"pages":[{"componentChunkName":"component---src-pages-index-js","jsonName":"index","path":"/"},{"componentChunkName":"component---src-pages-404-js","jsonName":"404-html-516","path":"/404.html"},{"componentChunkName":"component---src-pages-404-js","jsonName":"404-22d","path":"/404/"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-advanced-plugin-apis-html-af8","path":"/docs/advanced-plugin-apis.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-code-splitting-html-e39","path":"/docs/code-splitting.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-common-plugins-html-95d","path":"/docs/common-plugins.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-extended-configurations-html-b9b","path":"/docs/extended-configurations.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-getting-started-html-f09","path":"/docs/getting-started.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-plugin-system-html-3f5","path":"/docs/plugin-system.html"},{"componentChunkName":"component---src-templates-docs-js","jsonName":"docs-roadmap-html-fe9","path":"/docs/roadmap.html"},{"componentChunkName":"component---src-pages-versions-js","jsonName":"versions-724","path":"/versions/"}],"dataPaths":{"404-22d":"820/path---404-22-d-bce-0SUcWyAf8ecbYDsMhQkEfPzV8","404-html-516":"285/path---404-html-516-62a-0SUcWyAf8ecbYDsMhQkEfPzV8","dev-404-page-5f9":"386/path---dev-404-page-5-f-9-fab-0SUcWyAf8ecbYDsMhQkEfPzV8","docs-advanced-plugin-apis-html-af8":"717/path---docs-advanced-plugin-apis-html-af-8-6d3-Wntxf5xEF0YRRt7O3cnPGgiSAPY","docs-advanced-plugin-apis-html-c6f":"311/path---docs-advanced-plugin-apis-html-c-6-f-c64-ZzrV3M3cSkrEnwD3DkJpjWkNW78","docs-code-splitting-html-e39":"69/path---docs-code-splitting-html-e-39-59e-XjFiZ4LQNesV8PmbNSYHm6nVEs","docs-common-plugins-html-95d":"578/path---docs-common-plugins-html-95-d-ba0-RLznyVnY9aLlOtQx7fsnDalEj4","docs-extended-configurations-html-b9b":"477/path---docs-extended-configurations-html-b-9-b-e8e-aH3j35QKUf85AbjeCB9rjtOD3zE","docs-getting-started-html-f09":"702/path---docs-getting-started-html-f-09-04d-yxpCrXaEjtm3wkcGiyq7uP0rg","docs-getting-started-html-fce":"198/path---docs-getting-started-html-fce-09e-SvtqmLl7iOHaxCyxblPn5a4PMY","docs-plugin-system-html-3f5":"735/path---docs-plugin-system-html-3-f-5-48f-lSDC9svwVMCm8zCGmPCVbbz5kPs","docs-roadmap-html-0ca":"214/path---docs-roadmap-html-0-ca-456-CAqZqhZsVlNtLMCZ9Bvibx95k","docs-roadmap-html-fe9":"216/path---docs-roadmap-html-fe-9-800-QHQQsM2CN7gVD5ETn61KLiNLZSM","docs-setting-up-packem-html-e6b":"334/path---docs-setting-up-packem-html-e-6-b-40c-OuO2uye2QFYt7BZS5BPUuV9vh34","index":"231/path---index-6a9-8xXOvV0PwNhBprZWesl3gk2wj4k","versions-724":"726/path---versions-724-e4e-0SUcWyAf8ecbYDsMhQkEfPzV8"}};
 
 /***/ }),
 
@@ -1010,7 +1010,7 @@ exports.components = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Installation","items":[{"id":"getting-started","title":"Getting Started"},{"id":"setting-up-packem","title":"Setting up Packem"},{"id":"extended-configurations","title":"Extended Configurations"}]},{"title":"Plugin System","items":[{"id":"getting-started","title":"Getting Started"}]},{"title":"Advanced Guide","items":[{"id":"getting-started","title":"Getting Started"}]}]
+module.exports = [{"title":"Introduction","items":[{"id":"roadmap","title":"Roadmap"},{"id":"getting-started","title":"Getting Started"},{"id":"extended-configurations","title":"Extended Configurations"}]},{"title":"Plugin System","items":[{"id":"plugin-system","title":"Plugin System"},{"id":"common-plugins","title":"Common Plugins"},{"id":"advanced-plugin-apis","title":"Advanced Plugin APIs"}]},{"title":"Advanced Guide","items":[{"id":"code-splitting","title":"Code Splitting"}]}]
 
 /***/ }),
 
@@ -5870,7 +5870,7 @@ var Footer = function Footer(_ref) {
       color: theme__WEBPACK_IMPORTED_MODULE_6__["colors"].subtleOnDark,
       paddingTop: 15
     }
-  }, "Copyright \xA9 " + new Date().getFullYear() + " Facebook Inc.")))));
+  }, "Copyright \xA9 " + new Date().getFullYear() + " Packem.")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -7047,8 +7047,73 @@ function (_React$Component) {
       name: "viewport",
       content: "width=device-width, initial-scale=1.0"
     }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "57x57",
+      href: "/favicons/apple-icon-57x57.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "60x60",
+      href: "/favicons/apple-icon-60x60.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "72x72",
+      href: "/favicons/apple-icon-72x72.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "76x76",
+      href: "/favicons/apple-icon-76x76.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "114x114",
+      href: "/favicons/apple-icon-114x114.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "120x120",
+      href: "/favicons/apple-icon-120x120.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "144x144",
+      href: "/favicons/apple-icon-144x144.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "152x152",
+      href: "/favicons/apple-icon-152x152.png"
+    }), Glamor.createElement("link", {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/favicons/apple-icon-180x180.png"
+    }), Glamor.createElement("link", {
       rel: "icon",
-      href: "/favicon.ico"
+      type: "image/png",
+      sizes: "192x192",
+      href: "/favicons/android-icon-192x192.png"
+    }), Glamor.createElement("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/favicons/favicon-32x32.png"
+    }), Glamor.createElement("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "96x96",
+      href: "/favicons/favicon-96x96.png"
+    }), Glamor.createElement("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/favicons/favicon-16x16.png"
+    }), Glamor.createElement("link", {
+      rel: "manifest",
+      href: "/favicons/manifest.json"
+    }), Glamor.createElement("meta", {
+      name: "msapplication-TileColor",
+      content: "#ffffff"
+    }), Glamor.createElement("meta", {
+      name: "msapplication-TileImage",
+      content: "/ms-icon-144x144.png"
+    }), Glamor.createElement("meta", {
+      name: "theme-color",
+      content: "#ffffff"
     }), this.props.headComponents), Glamor.createElement("body", this.props.bodyAttributes, Glamor.createElement("div", {
       id: "___gatsby",
       dangerouslySetInnerHTML: {
@@ -7473,7 +7538,7 @@ var Versions = function Versions(_ref) {
   }, Glamor.createElement("div", {
     css: theme__WEBPACK_IMPORTED_MODULE_5__["sharedStyles"].articleLayout.content
   }, Glamor.createElement(components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null, "Packem Versions Changelog"), Glamor.createElement(components_TitleAndMetaTags__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: "React - Versions"
+    title: "Packem - Versions"
   }), Glamor.createElement("div", {
     css: theme__WEBPACK_IMPORTED_MODULE_5__["sharedStyles"].markdown
   }, Glamor.createElement("p", null, "Documentation for recent releases can be found in the links below."), _content_versions_yml__WEBPACK_IMPORTED_MODULE_6___default.a.map(function (version) {
