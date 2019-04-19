@@ -12,7 +12,8 @@ import React from 'react';
 import {colors, fonts, media} from 'theme';
 import {version} from 'site-constants';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
-import DocSearch from './DocSearch';
+// import DocSearch from './DocSearch';
+import GitHubButton from 'react-github-btn';
 
 import logoSvg from 'icons/packem-logo.png';
 
@@ -132,7 +133,7 @@ const Header = ({location}: {location: Location}) => (
           /> */}
         </nav>
 
-        <DocSearch />
+        {/* <DocSearch /> */}
 
         <div
           css={{
@@ -151,6 +152,7 @@ const Header = ({location}: {location: Location}) => (
           <Link
             css={{
               padding: '5px 10px',
+              marginRight: 10,
               whiteSpace: 'nowrap',
               ...fonts.small,
 
@@ -171,7 +173,15 @@ const Header = ({location}: {location: Location}) => (
             to="/versions">
             v{version}
           </Link>
-          <a
+          <GitHubButton
+            href="https://github.com/packem/packem"
+            data-icon="octicon-star"
+            data-size="large"
+            data-show-count="true"
+            aria-label="Star packem/packem on GitHub">
+            Star
+          </GitHubButton>
+          {/* <a
             css={{
               padding: '5px 10px',
               marginLeft: 10,
@@ -203,7 +213,7 @@ const Header = ({location}: {location: Location}) => (
                 color: colors.subtle,
               }}
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </Container>

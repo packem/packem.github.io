@@ -26,8 +26,7 @@ const PageNotFound = ({location}: Props) => (
           <div css={sharedStyles.markdown}>
             <p>We couldn't find what you were looking for.</p>
             <p>
-              Please contact the owner of the site that linked you to the
-              original URL and let them know their link is broken.
+              Please refer to the origin of this site for useful links.
             </p>
           </div>
         </div>

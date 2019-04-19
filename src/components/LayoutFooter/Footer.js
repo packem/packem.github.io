@@ -86,6 +86,12 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               rel="noopener">
               Twitter
             </ExternalFooterLink>
+            <ExternalFooterLink
+              href="https://gitter.im/packem_bundler/community"
+              target="_blank"
+              rel="noopener">
+              Gitter Chat
+            </ExternalFooterLink>
           </FooterNav>
           {/* <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>Community</MetaTitle>

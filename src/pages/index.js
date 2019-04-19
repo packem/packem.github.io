@@ -136,7 +136,7 @@ class Home extends Component {
                     </CtaItem>
                     <CtaItem>
                       {/* Update link */}
-                      <ButtonLink to="/docs/" type="secondary">
+                      <ButtonLink to="/docs/code-splitting.html" type="secondary">
                         Advanced Guide
                       </ButtonLink>
                     </CtaItem>
@@ -269,17 +269,17 @@ class Home extends Component {
               paddingBottom: 45,
             }}>
             <Container>
-              <Flex valign="center">
-                <CtaItem>
+              <Flex valign="center" style={{justifyContent: 'center'}}>
+                {/* <CtaItem> */}
                   <ButtonLink to="/docs/getting-started.html" type="primary">
                     Get Started
                   </ButtonLink>
-                </CtaItem>
-                <CtaItem>
+                {/* </CtaItem> */}
+                {/* <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
                     Take the Tutorial
                   </ButtonLink>
-                </CtaItem>
+                </CtaItem> */}
               </Flex>
             </Container>
           </section>
