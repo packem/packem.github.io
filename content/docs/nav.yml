@@ -25,8 +25,15 @@
       title: Common Plugins
     - id: advanced-plugin-apis
       title: Advanced Plugin APIs
-- title: Advanced Guide
+- title: Advanced Concepts
+  isOrdered: true
   items:
+    - id: execution-contexts
+      title: Execution Contexts
+    - id: the-module-graph
+      title: The Module Graph
+    - id: atomic-modules
+      title: Atomic Modules
     - id: code-splitting
       title: Code Splitting
 # - title: Main Concepts

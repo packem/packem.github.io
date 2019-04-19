@@ -221,7 +221,7 @@ No options are available for this plugin.
 
 ```yaml
 plugins:
-  markdown-plugin: on
+  coffeescript-plugin: on
 ```
 
 > Note

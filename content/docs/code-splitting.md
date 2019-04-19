@@ -48,7 +48,10 @@ export default [
   // in the configuration file.
   {
     id: "root",
-    // Root never gets a `bundle_id`
+    // Root never exhibits a parent because logically, the main bundle
+    // cannot be a dynamic module since that would necessate loading into
+    // some script. This is not a bug, but rather intended.
+    bundle_id: "",
     dependencies: [
       // Module `sKAY2qXG` (mangled) is bundled with the root.
       "sKAY2qXG"

@@ -136,7 +136,7 @@ class Home extends Component {
                     </CtaItem>
                     <CtaItem>
                       {/* Update link */}
-                      <ButtonLink to="/docs/code-splitting.html" type="secondary">
+                      <ButtonLink to="/docs/execution-contexts.html" type="secondary">
                         Advanced Guide
                       </ButtonLink>
                     </CtaItem>
