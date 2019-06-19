@@ -1,18 +1,17 @@
 ---
-id: code-splitting
-title: Code Splitting
-permalink: docs/code-splitting.html
-prev: getting-started.html
-# next: extended-configurations.html
-redirect_from:
-  - "docs/codesplitting"
+title: "Code Splitting"
+meta_title: "Packem - Code Splitting"
+meta_description: "Packem supports splitting of JavaScript modules out of the box using the import() syntax."
+keywords:
+  - chunks
+  - code splitting
+  - splitting
+sidebar: "docs"
 ---
 
 The `import()` ECMAScript proposal by Domenic Denicola allows dynamically loading modules. It is currently in stage 3 of the [TC39 process](https://tc39.github.io/process-document/).
 
-> Warning
->
-> Support for dynamic imports in Packem using the `dev-plugin` is early. Refer to the issues section of the [`packem-plugins`](https://github.com/packem/packem-plugins.git) repo.
+> **Warning**: Support for dynamic imports in Packem using the `dev-plugin` is early. Refer to the issues section of the [`packem-plugins`](https://github.com/packem/packem-plugins.git) repo.
 
 ## Example
 
@@ -60,8 +59,7 @@ export default [
   },
   {
     id: "sKAY2qXG",
-    // If `bundle_parent` corresponds to `root` then it's a regular
-    // module.
+    // If `bundle_parent` corresponds to `root` then it's a regular module.
     bundle_parent: "root",
     dependencies: [
       "yFj2CkjK", "vhjv3jjP", "zYqARjUK",

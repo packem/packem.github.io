@@ -1,11 +1,11 @@
 ---
-id: roadmap
-title: Roadmap
-permalink: docs/roadmap.html
-next: getting-started.html
-redirect_from:
-  - "docs/features"
-  - "docs/feature-requests"
+title: "Roadmap"
+meta_title: "Packem - Roadmap"
+meta_description: "Packem makes sure to increase development and user experiences extensively. However, we need your support to create a future where we can bundle painlessly."
+keywords:
+    - roadmap
+    - feature-requests
+sidebar: "docs"
 ---
 
 Packem makes sure to increase development and user experiences extensively. However, we need your support to create a future where we can bundle painlessly.

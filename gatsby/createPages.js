@@ -1,161 +1,132 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
+const path = require(`path`)
+const _ = require(`lodash`)
+const { allGhostPosts, allMarkdownPosts } = require(`../utils/node-queries`)
+const { ghostQueryConfig } = require(`../utils/query-config`)
+const urlUtils = require(`../utils/urls`)
+const getRelatedPosts = require(`../utils/getRelatedPosts`)
 
-'use strict';
+module.exports.createRedirects = ({ actions }) => {
+    const { createRedirect } = actions
 
-const {resolve} = require('path');
+    // The /concepts page doesn't exist, we need to redirect to
+    // the first post of this section
+    createRedirect({
+        fromPath: `/concepts`,
+        isPermanent: true,
+        redirectInBrowser: true,
+        toPath: `/concepts/introduction/`,
+    })
+}
 
-module.exports = async ({graphql, actions}) => {
-  const {createPage, createRedirect} = actions;
+module.exports.createGhostPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const queryPromises = []
 
-  // Used to detect and prevent duplicate redirects
-  const redirectToSlugMap = {};
+    // Query for each of the tags that we defined above
+    ghostQueryConfig.forEach(({ tag, section, template, tagsTemplate }) => {
+        queryPromises.push(new Promise((resolve, reject) => {
+            graphql(allGhostPosts(tag))
+                .then((result) => {
+                    if (result.errors) {
+                        return reject(result.errors)
+                    }
 
-  // const blogTemplate = resolve(__dirname, '../src/templates/blog.js');
-  // const communityTemplate = resolve(__dirname, '../src/templates/community.js');
-  const docsTemplate = resolve(__dirname, '../src/templates/docs.js');
-  // const tutorialTemplate = resolve(__dirname, '../src/templates/tutorial.js');
+                    const items = result.data.allGhostPost.edges
 
-  // Redirect /index.html to root.
-  createRedirect({
-    fromPath: '/index.html',
-    redirectInBrowser: true,
-    toPath: '/',
-  });
+                    // Create a tags archive page per primary internal tag as defined per ghostPostToQuery
+                    // The URL of each tags archive page will contain the current internal tag slug and
+                    // the tag slug, e. g. `/faq/errors/` or `/tutorials/themes/`
+                    if (tagsTemplate) {
+                        let tagArchives = []
 
-  const allMarkdown = await graphql(
-    `
-      {
-        allMarkdownRemark(limit: 1000) {
-          edges {
-            node {
-              fields {
-                redirect
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
+                        _.forEach(items, ({ node }) => {
+                            // Remove all internal tags
+                            const filteredTags = node.tags.filter(tag => !tag.slug.match(/^hash-/))
 
-  if (allMarkdown.errors) {
-    console.error(allMarkdown.errors);
+                            _.forEach(filteredTags, tag => tagArchives.push(tag))
+                        })
 
-    throw Error(allMarkdown.errors);
-  }
+                        // Remove invalid values and duplicates
+                        tagArchives = _.uniqBy(_.compact(tagArchives), `slug`)
 
-  allMarkdown.data.allMarkdownRemark.edges.forEach(edge => {
-    const slug = edge.node.fields.slug;
+                        _.forEach(tagArchives, (tag) => {
+                            tag.url = urlUtils.urlForGhostTag(tag, section)
 
-    // if (slug === 'docs/error-decoder.html') {
-    //   // No-op so far as markdown templates go.
-    //   // Error codes are managed by a page in src/pages
-    //   // (which gets created by Gatsby during a separate phase).
-    // } else
-    if (
-      // slug.includes('blog/') ||
-      // slug.includes('community/') ||
-      // slug.includes('contributing/') ||
-      slug.includes('docs/')
-      // ||
-      // slug.includes('tutorial/') ||
-      // slug.includes('warnings/')
-    ) {
-      let template;
-      if (slug.includes('blog/')) {
-        template = blogTemplate;
-      } else if (slug.includes('community/')) {
-        template = communityTemplate;
-      } else if (
-        // slug.includes('contributing/') ||
-        slug.includes('docs/')
-        // ||
-        // slug.includes('warnings/')
-      ) {
-        template = docsTemplate;
-      }
-      // else if (slug.includes('tutorial/')) {
-      //   template = tutorialTemplate;
-      // }
+                            createPage({
+                                path: tag.url,
+                                component: path.resolve(tagsTemplate),
+                                context: {
+                                    // Data passed to context is available
+                                    // in page queries as GraphQL variables.
+                                    // TODO: this could be refactored to be an object
+                                    // not sure if it interfers with search
+                                    tagSlug: tag.slug,
+                                    tagName: tag.name,
+                                    tagURL: tag.url,
+                                    tagDescription: tag.description,
+                                    tagImage: tag.feature_image,
+                                    tagMetaTitle: tag.meta_title,
+                                    tagMetaDescription: tag.meta_description,
+                                    section: section,
+                                },
+                            })
+                        })
+                    }
 
-      const createArticlePage = path =>
-        createPage({
-          path: path,
-          component: template,
-          context: {
-            slug,
-          },
-        });
+                    _.forEach(items, ({ node }) => {
+                        // Update the existing URL field to reflect the URL in Gatsby and
+                        // not in Ghost. Also needed to link to related posts.
+                        node.url = urlUtils.urlForGhostPost(node, section)
 
-      // Register primary URL.
-      createArticlePage(slug);
+                        createPage({
+                            path: node.url,
+                            component: path.resolve(template),
+                            context: {
+                                // Data passed to context is available
+                                // in page queries as GraphQL variables.
+                                slug: node.slug,
+                                relatedPosts: getRelatedPosts(node, result.data.allGhostPost.edges),
+                                section,
+                            },
+                        })
+                    })
 
-      // Register redirects as well if the markdown specifies them.
-      if (edge.node.fields.redirect) {
-        let redirect = JSON.parse(edge.node.fields.redirect);
-        if (!Array.isArray(redirect)) {
-          redirect = [redirect];
-        }
+                    return resolve()
+                })
+        }))
+    })
 
-        redirect.forEach(fromPath => {
-          if (redirectToSlugMap[fromPath] != null) {
-            console.error(
-              `Duplicate redirect detected from "${fromPath}" to:\n` +
-                `* ${redirectToSlugMap[fromPath]}\n` +
-                `* ${slug}\n`,
-            );
-            process.exit(1);
-          }
+    return Promise.all(queryPromises)
+}
 
-          // A leading "/" is required for redirects to work,
-          // But multiple leading "/" will break redirects.
-          // For more context see github.com/reactjs/reactjs.org/pull/194
-          const toPath = slug.startsWith('/') ? slug : `/${slug}`;
+module.exports.createMarkdownPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+    const queryPromises = []
 
-          redirectToSlugMap[fromPath] = slug;
-          createRedirect({
-            fromPath: `/${fromPath}`,
-            redirectInBrowser: true,
-            toPath,
-          });
-        });
-      }
-    }
-  });
+    queryPromises.push(new Promise((resolve, reject) => {
+        graphql(allMarkdownPosts())
+            .then((result) => {
+                if (result.errors) {
+                    return reject(result.errors)
+                }
 
-  const newestBlogEntry = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          limit: 1
-          filter: {fileAbsolutePath: {regex: "/blog/"}}
-          sort: {fields: [fields___date], order: DESC}
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
+                return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+                    const DocTemplate = path.resolve(`./src/templates/markdown/post.js`)
 
-  // const newestBlogNode = newestBlogEntry.data.allMarkdownRemark.edges[0].node;
+                    createPage({
+                        path: node.fields.slug,
+                        component: DocTemplate,
+                        context: {
+                            // Data passed to context is available
+                            // in page queries as GraphQL variables.
+                            slug: node.fields.slug,
+                            section: node.fields.section,
+                        },
+                    })
+                    return resolve()
+                })
+            })
+    }))
 
-  // // Blog landing page should always show the most recent blog entry.
-  // ['/blog/', '/blog'].map(slug => {
-  //   createRedirect({
-  //     fromPath: slug,
-  //     redirectInBrowser: true,
-  //     toPath: newestBlogNode.fields.slug,
-  //   });
-  // });
-};
+    return Promise.all(queryPromises)
+}

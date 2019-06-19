@@ -1,14 +1,14 @@
 ---
-id: extended-configurations
-title: Extended Configurations
-permalink: docs/extended-configurations.html
-prev: setting-up-packem.html
-next: plugin-system.html
-redirect_from:
-  - "docs/configuration"
-  - "docs/configurations"
-  - "docs/config"
-  - "docs/extend-config"
+title: "Extended Configurations"
+meta_title: "Packem - Extended Configurations"
+meta_description: "This section entails the necessary details required to use Packem's configuration system efficiently."
+keywords:
+  - babel
+  - config
+  - configuration
+  - packem.config.yml
+  - babel presets
+sidebar: "docs"
 ---
 
 This section entails the necessary details required to use Packem's configuration system efficiently.
@@ -17,7 +17,7 @@ This section entails the necessary details required to use Packem's configuratio
 
 Module bundling is much more than mere string concatenation so allowing tools like [Babel](https://babeljs.io/) to transform your code is necessary.
 
-Create a new field relative to the (required) `root` and `output` fields called `transformer`. Under this field, add a `babelPresets` and/or a `babelPlugins` field(s). Both fields accept an array of strings that indicate which Babel presets and/or plugins should be used during transformation.
+Create a new field relative to the (required) `root` and `output` fields called `transformer`. Under this field, add a `babelPresets` and/or a `babelPlugins` field(s). Both fields accept an array of strings that indicate which Babel presets and/or plugins should be used during transformation respectively.
 
 By default, Packem includes `@babel/core` so you don't need to install it. The configuration psuedocode below shows how to add `@babel/preset-env` and `@babel/plugin-syntax-dynamic-import` to your code.
 

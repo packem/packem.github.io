@@ -1,12 +1,10 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
+const createPages = require(`./gatsby/createPages`)
+const onCreateNode = require(`./gatsby/onCreateNode`)
 
-'use strict';
+exports.createPages = ({ graphql, actions }) => Promise.all([
+    createPages.createRedirects({ actions }),
+    createPages.createGhostPages({ graphql, actions }),
+    createPages.createMarkdownPages({ graphql, actions }),
+])
 
-exports.onCreateWebpackConfig = require('./gatsby/onCreateWebpackConfig');
-exports.createPages = require('./gatsby/createPages');
-exports.onCreateNode = require('./gatsby/onCreateNode');
-exports.onCreatePage = require('./gatsby/onCreatePage');
+exports.onCreateNode = async ({ node, getNode, actions }) => await onCreateNode.createMarkdownNodeFields(({ node, getNode, actions }))

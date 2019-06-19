@@ -1,14 +1,14 @@
 ---
-id: common-plugins
-title: Common Plugins
-permalink: docs/common-plugins.html
-prev: setting-up-packem.html
-next: advanced-plugin-apis.html
-redirect_from:
-  - "docs/common-plugin"
+title: "Common Plugins"
+meta_title: "Packem - Common Plugins"
+meta_description: "These are a set of plugins created to support basic development utilities, extended configurations, styling with SASS/SCSS, stats on output bundles, etc."
+keywords:
+    - plugins
+    - plugin development
+sidebar: "docs"
 ---
 
-These are a set of plugins created to support basic development utilities, extended configurations, styling with SASS/SCSS, stats on output bundles, etc. They are hosted on [a repo](https://github.com/packem/packem-plugins) on the packem github org. To install a common plugin, run:
+These are a set of plugins created to support basic development utilities, extended configurations, styling with SASS/SCSS, stats on output bundles, etc. They are hosted on [a repo](https://github.com/packem/packem-plugins) on the Packem GitHub organization. To install a common plugin, run:
 
 ```bash
 # Where `<name>` is the plugin name
@@ -18,7 +18,7 @@ npm install @packem/<name>-plugin --save-dev
 yarn add --dev @packem/<name>-plugin
 ```
 
-## `@packem/file-plugin`
+### `@packem/file-plugin`
 
 The file plugin allows processing of raw file types as JavaScript modules during runtime. For instance this would return a valid JavaScript object:
 
@@ -32,15 +32,15 @@ Currently, raw file processing is done only for the following extensions:
 
 `glsl`, `hlsl`, `cg`, `tesc`, `tese`, `geom`, `comp`, `vert`, `frag`, `vsh`, `fsh`, `log`, `cnf`, `conf`, `cfg`, `temp`, `tmp`, `sql`, `sqlite`, `svg`, `patch`, `0`, `md`, `asc`, `txt`, `csv`, `json`, `ini`, `yaml`, `toml`, `xml`, `rss`, `atom`, `jpg`, `jpeg`, `png`, `gif`, `webp`, `bmp`.
 
-### Usage
+#### Usage
 
 Add `file-plugin: on` to the `plugins` section in `packem.config.yml`.
 
-## `@packem/dev-plugin`
+### `@packem/dev-plugin`
 
 Out of the box, Packem doesn't come with a server nor does it include plugins. This plugin brings common developer tools like an HTTP server and a file watcher for development purposes.
 
-### Usage
+#### Usage
 
 There are several options available for this plugin. Let's explore some:
 
@@ -64,17 +64,15 @@ plugins:
     clientSideLogs: true
 ```
 
-> Note
->
-> Do not place HTML files in the same folder as the output bundle's directory. For instance if your config outputs to `./dist/bundle.js` do not place HTML files in `./dist/`.
+> **Note**: Do not place HTML files in the same folder as the output bundle's directory. For instance if your config outputs to `./dist/bundle.js` do not place HTML files in `./dist/`.
 
-## `@packem/style-plugin`
+### `@packem/style-plugin`
 
 Allows all-in-one styling with PostCSS, SASS/SCSS and LESS.
 
 > **Note**: Currently, SASS/SCSS is supported only.
 
-### Usage
+#### Usage
 
 There are several options available for this plugin. Let's explore some:
 
@@ -89,11 +87,11 @@ plugins:
     sourceMap: true
 ```
 
-## `@packem/minify-plugin`
+### `@packem/minify-plugin`
 
 Uses [terserjs](https://github.com/terser-js/terser) to crunch and optimize your JavaScript into tiny obfuscated files and write it to the output path.
 
-### Usage
+#### Usage
 
 There are several options available for this plugin. Let's explore some:
 
@@ -115,15 +113,13 @@ plugins:
         beautify: true
 ```
 
-> Note
->
-> This plugin currently minifies the main output bundle only. This means code splitted modules are not minified.
+> **Note**: This plugin currently minifies the main output bundle only. This means code splitted modules are not minified.
 
-## `@packem/image-plugin`
+### `@packem/image-plugin`
 
 Uses ImageMin to optimize PNG, JPG/JPEG, GIF, WebP and SVG image formats.
 
-### Usage
+#### Usage
 
 There are several options available for `image-plugin`. Let's explore some:
 
@@ -161,15 +157,13 @@ plugins:
         quality: [0.3, 0.5]
 ```
 
-> Note
->
-> You don't need to specify all of these options. That's why they're options.
+> **Note**: You don't need to specify all of these options. That's why they're options.
 
-## `@packem/bundle-stats-plugin`
+### `@packem/bundle-stats-plugin`
 
 Compares a custom predefined constraint/limit on the bundle size to the actual size then reports a tabular diagnostic message. It does so by walking through the `outputDir` of the project and collecting stats.
 
-### Usage
+#### Usage
 
 ```yaml
 plugins:
@@ -188,15 +182,13 @@ plugins:
       # Checks if any file that ends with `min.js` is greater than 4kb.
       "min.js": 4
 ```
-> Note
->
-> If you're matching a file type that contains a character sequence that doesn't fit as a proper YAML property value, wrap it in a string like "min.js" and "lib.min.css"
+> **Note**: If you're matching a file type that contains a character sequence that doesn't fit as a proper YAML property value, wrap it in a string like "min.js" and "lib.min.css"
 
-## `@packem/markdown-plugin`
+### `@packem/markdown-plugin`
 
 Processes a Markdown module and returns an escaped HTML string in the output.
 
-### Usage
+#### Usage
 
 ```yaml
 plugins:
@@ -211,11 +203,11 @@ plugins:
     rawPrefixHeaderId: true
 ```
 
-## `@packem/coffeescript-plugin`
+### `@packem/coffeescript-plugin`
 
 Transforms a CoffeeScript module and concatenates a string of JavaScript to the output.
 
-### Usage
+#### Usage
 
 No options are available for this plugin.
 
@@ -224,9 +216,7 @@ plugins:
   coffeescript-plugin: on
 ```
 
-> Note
->
-> Imports/requires are not _resolveable_ so this plugin remains super buggy. If you wish to contribute, welcome.
+> **Note**: Imports/requires are not _resolveable_ so this plugin remains super buggy. If you wish to contribute, welcome.
 
 ## Resources
 

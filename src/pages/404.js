@@ -1,38 +1,21 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- * @flow
- */
+import React from 'react'
+import { Link } from 'gatsby'
 
-import Container from 'components/Container';
-import Header from 'components/Header';
-import TitleAndMetaTags from 'components/TitleAndMetaTags';
-import Layout from 'components/Layout';
-import React from 'react';
-import {sharedStyles} from 'theme';
+import { Spirit } from '../styles/spirit-styles'
+import { Layout } from '../components/common/layout'
+import { Icon } from '../components/common'
 
-type Props = {
-  location: Location,
-};
-
-const PageNotFound = ({location}: Props) => (
-  <Layout location={location}>
-    <Container>
-      <div css={sharedStyles.articleLayout.container}>
-        <div css={sharedStyles.articleLayout.content}>
-          <Header>Page Not Found</Header>
-          <TitleAndMetaTags title="Packem - Page Not Found" />
-          <div css={sharedStyles.markdown}>
-            <p>We couldn't find what you were looking for.</p>
-            <p>
-              Please refer to the origin of this site for useful links.
-            </p>
-          </div>
+const NotFoundPage = () => (
+    <Layout headerDividerStyle="shadow">
+        <div className={`${Spirit.page.m} pt-vw5 pb-vw5 flex flex-column items-center`}>
+            <Icon name="four-o-four-icon" className="w15 h-auto stroke-lightgrey" />
+            <h1 style={{fontWeight: 700}} className={Spirit.h1}>404</h1>
+            <p className={`${Spirit.p} midgrey`}>Achtung! That page doesn&#39;t seem to exist.</p>
+            <div className="flex mt5">
+                <Link to="/" className="pa2 dib yellow-d3 hover-darkgrey link br b--whitegrey">Homepage</Link>
+            </div>
         </div>
-      </div>
-    </Container>
-  </Layout>
-);
+    </Layout>
+)
 
-export default PageNotFound;
+export default NotFoundPage

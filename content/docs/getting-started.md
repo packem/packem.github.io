@@ -1,12 +1,12 @@
 ---
-id: getting-started
-title: Getting Started
-permalink: docs/getting-started.html
-prev: roadmap.html
-next: extended-configurations.html
-redirect_from:
-  - "docs/setting-up"
-  - "docs/setup"
+title: "Getting Started"
+meta_title: "Packem - Getting Started"
+meta_description: "Packem is a compiled ES bundler and linker."
+keywords:
+    - intro
+    - docs
+    - getting-started
+sidebar: "docs"
 ---
 
 This section outlines how to install and configure Packem to get you started. Based off a simple app, you could extend your needs further to fit your requirements.
@@ -17,9 +17,7 @@ To install Packem, your system needs to meet a few requirements:
 
 - [Node (_v10_, _v9_ or _v8_)](https://nodejs.org/) **must** be installed (with *npm*). If you use [Yarn](https://yarnpkg.com/), then follow along with the appropriate commands.
 
-> Note
->
-> Packem binaries are not available for Windows but are expected soon.
+> **Note**: Packem binaries are not available for Windows but are expected soon.
 
 Through your terminal, run:
 
@@ -46,9 +44,7 @@ output: "./dist/bundle.js"
 
 As you might've noticed, the `root` field is where the bundling process starts and the `output` field is where your final concatenated bundle ends up. You need to point to a file to get the root and output right. Packem takes care of the rest of the process according to how you've defined it.
 
-> Note
->
-> Only the `root` and `output` fields are necessary.
+> **Note**: Only the `root` and `output` fields are necessary.
 
 ## Using Packem's CLI to start bundling
 

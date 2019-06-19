@@ -1,13 +1,11 @@
 ---
-id: advanced-plugin-apis
-title: Advanced Plugin APIs
-permalink: docs/advanced-plugin-apis.html
-# prev: setting-up-packem.html
-# next: advanced-plugin-apis.html
-redirect_from:
-  - "docs/advanced-plugins"
-  - "docs/advanced-plugin"
-  - "docs/plugins/advanced"
+title: "Advanced Plugin APIs"
+meta_title: "Packem - Advanced Plugin APIs"
+meta_description: "This section covers all the nitty gritty details of creating Packem plugins to the extent of being able to create custom events to allow plugins to hook onto during compile time using PackemEventDispatcher."
+keywords:
+    - advanced plugins
+    - advanced plugin development
+sidebar: "docs"
 ---
 
 This section covers all the nitty gritty details of creating Packem plugins to the extent of being able to create custom events to allow plugins to hook onto during compile time using the `PackemEventDispatcher`.
@@ -67,9 +65,7 @@ interface ModuleInterface {
 }
 ```
 
-> Note
->
-> For more details on the module graph, check [this link](/docs/the-module-graph.html).
+> **Note**: For more details on the module graph, check [this link](/docs/the-module-graph.html).
 
 ## Built-in events
 

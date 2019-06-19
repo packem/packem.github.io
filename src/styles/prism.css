@@ -1,0 +1,54 @@
+@import "colors.css";
+
+/* Code blocks */
+pre[class*="language-"] {
+	margin: 0;
+	margin-top: 10px;
+	overflow: auto;
+	font-size: 14px;
+	border-radius: 8px;
+	background: #221f15 !important;
+}
+
+pre[class*="language-"] code, code {
+	font-family: Inconsolata, 'Courier New', Courier, monospace !important;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    border: none;
+	background: #2a3644;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .3em .4em;
+	border-radius: .3em;
+	white-space: normal;
+	background: #f7f0e2 !important;
+	text-shadow: none;
+	color: var(--darkgrey);
+    font-size: 0.9em;
+}
+
+a > code[class*="language-"] {
+	color: var(--yellow);
+}
+
+.token.key.atrule {
+	color: #fac863;
+}
+
+.gatsby-code-title {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    margin-bottom: -8px !important;
+    padding: 8px 15px;
+    color: rgba(255,255,255,0.65);
+    font-size: 1.3rem;
+    font-family: Menlo, Courier, monospace;
+    background: #222c37;
+    border-radius: 8px 8px 0 0;
+    user-select: none;
+}

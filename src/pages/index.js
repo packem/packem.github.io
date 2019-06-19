@@ -1,392 +1,157 @@
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * @emails react-core
- */
+import React from 'react'
+import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
-import ButtonLink from 'components/ButtonLink';
-import Container from 'components/Container';
-import Flex from 'components/Flex';
-// import CodeExample from 'components/CodeExample';
-import PropTypes from 'prop-types';
-import React, {Component} from 'react';
-import {graphql} from 'gatsby';
-import TitleAndMetaTags from 'components/TitleAndMetaTags';
-import Layout from 'components/Layout';
-import {colors, media, sharedStyles} from 'theme';
-import createOgUrl from 'utils/createOgUrl';
-// Needs to be white & SVG
-// import logoWhiteSvg from 'icons/packem-logo.png';
+import { Icon, Box } from '../components/common'
+import { Layout } from '../components/common/layout'
+import { HomeHeader, HomeAPIBox, HomeFAQLink } from '../components/home'
+import { Spirit } from '../styles/spirit-styles'
+import { MetaData, getMetaImageUrls } from '../components/common/meta'
 
-class Home extends Component {
-
-  render() {
-    const {data, location} = this.props;
-    const {marketing} = data;
-
-    // const code = codeExamples.edges.reduce((lookup, {node}) => {
-    //   lookup[node.mdAbsolutePath] = node;
-    //   return lookup;
-    // }, {});
+const HomePage = ({ data, location }) => {
+    // Add meta title and description for this page here to overwrite the site meta data as set in the config
+    const title = `Packem`
+    const description = `Packem is a compiled ES module bundler and linker.`
+    const imageUrl = getMetaImageUrls()
 
     return (
-      <Layout location={location}>
-        <TitleAndMetaTags
-          title="Packem &ndash; A precompiled JavaScript module bundler"
-          ogUrl={createOgUrl('index.html')}
-        />
-        <div css={{width: '100%'}}>
-          <header
-            css={{
-              backgroundColor: colors.dark,
-              color: colors.white,
-            }}>
-            <div
-              css={{
-                paddingTop: 45,
-                paddingBottom: 20,
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="website"
+                title={title}
+                description={description}
+                image={imageUrl}
+            />
+            <Layout
+                headerDividerStyle="shadow"
+                bodyClass="bg-white"
+                mainClass="bg-whitegrey-l2 pb-vw6 pb-vw3-ns"
+                header={<HomeHeader />}
+            >
+                <div className="pt-vw3 home-main-box-padding-ns">
+                    <div className={`${Spirit.page.xl} grid-12 gutter-row-20 gutter-40-ns`}>
 
-                [media.greaterThan('small')]: {
-                  paddingTop: 60,
-                  paddingBottom: 70,
-                },
+                        <section className="col-12 col-6-ns flex flex-column justify-between mt4 mt0-ns">
+                            <h1 className={`${Spirit.h3} link darkgrey hover-midgrey flex-grow-0`}>Main Features</h1>
 
-                // Large React logo that appears in the main header
-                // [media.greaterThan('xlarge')]: {
-                //   paddingTop: 95,
-                //   paddingBottom: 85,
-                //   maxWidth: 1500, // Positioning of background logo
-                //   marginLeft: 'auto',
-                //   marginRight: 'auto',
-                //   position: 'relative',
-                //   '::before': {
-                //     content: ' ',
-                //     position: 'absolute',
-                //     top: 0,
-                //     left: 0,
-                //     bottom: 0,
-                //     right: 0,
-                //     backgroundImage: `url(${logoWhiteSvg})`,
-                //     backgroundRepeat: 'no-repeat',
-                //     backgroundPosition: '100% 100px',
-                //     backgroundSize: '50% auto',
-                //     opacity: 0.05,
-                //   },
-                // },
-              }}>
-              <div
-                css={{
-                  // Content should be above absolutely-positioned hero image
-                  position: 'relative',
-                }}>
-                <Container>
-                  <h1
-                    css={{
-                      color: colors.brand,
-                      textAlign: 'center',
-                      margin: 0,
-                      fontSize: 45,
-                      letterSpacing: '0.01em',
-                      [media.size('xsmall')]: {
-                        fontSize: 30,
-                      },
-                      [media.greaterThan('xlarge')]: {
-                        fontSize: 60,
-                      },
-                    }}>
-                    Packem
-                  </h1>
-                  <p
-                    css={{
-                      paddingTop: 15,
-                      textAlign: 'center',
-                      fontSize: 24,
-                      letterSpacing: '0.01em',
-                      fontWeight: 200,
+                            <Box className="mt5 tdn flex-auto flex flex-column items-stretch" elevation="1">
+                                <HomeAPIBox
+                                    to="/api/#frontend-sdk"
+                                    title="Safe Binaries"
+                                    icon="sdks"
+                                >
+                                    Uses precompiled Rust during build-time as safe Node C/C++ Addons.
+                                </HomeAPIBox>
+                                <HomeAPIBox
+                                    to="/api/#rest-api"
+                                    title="Extremely Fast"
+                                    icon="rocket"
+                                >
+                                    Packem is <b>+2X faster than Parcel with multicore compilation</b>.
+                                </HomeAPIBox>
+                                <HomeAPIBox
+                                    to="/api/#tools"
+                                    title="Comprehensive Plugin API"
+                                    icon="rest-api"
+                                >
+                                    Create plugins cheaply, yet making the most of it.
+                                </HomeAPIBox>
+                            </Box>
+                        </section>
 
-                      [media.size('xsmall')]: {
-                        fontSize: 16,
-                        maxWidth: '12em',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                      },
+                        <section className="col-12 col-6-ns mt0-ns bt bn-ns b--whitegrey nl5 nr5 nl0-ns nr0-ns ml0-ns mr0-ns pl5 pr5 pl0-ns pr0-ns pt5 pt0-ns ">
+                            <h1 className={`${Spirit.h3} link darkgrey hover-midgrey`}>Latest Updates</h1>
+                            <div className="mt3 mt7-ns">
+                                <HomeFAQLink to="/#" title="Update site UI ">
+                                    The traditional React-ish style Gatsby template was removed due to subtle misleading effects. Packem's new site comes with a completely refreshing UI.
+                                </HomeFAQLink>
 
-                      [media.greaterThan('xlarge')]: {
-                        paddingTop: 20,
-                        fontSize: 30,
-                      },
-                    }}>
-                    A precompiled JavaScript module bundler
-                  </p>
-                  <Flex
-                    valign="center"
-                    css={{
-                      paddingTop: 40,
+                                <HomeFAQLink to="https://github.com/packem/packem/releases/tag/0.1.4" title="Latest packem@0.1.4 patch comes with improved builds! 🚀">
+                                    This patch resolves a few internal CI issues in previous builds and comes with better build improvements.
+                                </HomeFAQLink>
 
-                      [media.greaterThan('xlarge')]: {
-                        paddingTop: 65,
-                      },
-                    }}>
-                    <CtaItem>
-                      <ButtonLink
-                        to="/docs/getting-started.html"
-                        type="primary">
-                        Get Started
-                      </ButtonLink>
-                    </CtaItem>
-                    <CtaItem>
-                      {/* Update link */}
-                      <ButtonLink to="/docs/execution-contexts.html" type="secondary">
-                        Advanced Guide
-                      </ButtonLink>
-                    </CtaItem>
-                  </Flex>
-                </Container>
-              </div>
-            </div>
-          </header>
+                                <HomeFAQLink to="https://github.com/packem/packem/issues/7" title="MacOS binaries marked as Release Candidate ✔">
+                                    Orginally, MacOS builds were not yet battle-tested towards release. With the upcoming packem@0.1.4 patch release, drastic build improvisions will be countered.
+                                </HomeFAQLink>
 
-          <Container>
-            <div css={sharedStyles.markdown}>
-              <section
-                css={[
-                  sectionStyles,
-                  {
-                    [media.lessThan('medium')]: {
-                      marginTop: 0,
-                      marginBottom: 0,
-                      overflowX: 'auto',
-                      paddingTop: 30,
-                      WebkitOverflowScrolling: 'touch',
-                      position: 'relative',
-                      maskImage:
-                        'linear-gradient(to right, transparent, white 10px, white 90%, transparent)',
-                    },
-                  },
-                ]}>
-                <div
-                  css={{
-                    display: 'flex',
-                    flexDirection: 'row',
-
-                    [media.lessThan('medium')]: {
-                      display: 'block',
-                      whiteSpace: 'nowrap',
-                    },
-                  }}>
-                  {marketing.edges.map(({node: column}, index) => (
-                    <div
-                      key={index}
-                      css={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        flex: '0 1 33%',
-                        marginLeft: 40,
-
-                        '&:first-of-type': {
-                          marginLeft: 0,
-
-                          [media.lessThan('medium')]: {
-                            marginLeft: 10,
-                          },
-                        },
-
-                        [media.lessThan('medium')]: {
-                          display: 'inline-block',
-                          verticalAlign: 'top',
-                          marginLeft: 0,
-                          whiteSpace: 'normal',
-                          width: '75%',
-                          marginRight: 20,
-                          paddingBottom: 40,
-
-                          '&:first-of-type': {
-                            marginTop: 0,
-                          },
-                        },
-                      }}>
-                      <h3
-                        css={[
-                          headingStyles,
-                          {
-                            '&&': {
-                              // Make specificity higher than the site-wide h3 styles.
-                              color: colors.subtle,
-                              paddingTop: 0,
-                              fontWeight: 300,
-                              fontSize: 20,
-
-                              [media.greaterThan('xlarge')]: {
-                                fontSize: 24,
-                              },
-                            },
-                          },
-                        ]}>
-                        {column.frontmatter.title}
-                      </h3>
-                      <div dangerouslySetInnerHTML={{__html: column.html}} />
+                                <Link to="/faq/" className={`${Spirit.p} midgrey fw5 link hover-blue`}>View entire changelog...</Link>
+                            </div>
+                        </section>
                     </div>
-                  ))}
+
+                    {/* <section className={`${Spirit.page.xl} col-12 mt8 mt-vw3-ns bt bn-ns b--whitegrey pt5 pt0-ns`}>
+                        <Link to="/integrations/" className={`${Spirit.h3} link darkgrey hover-midgrey`}>Integrations</Link>
+                        <p className={`${Spirit.p} mt2 midgrey flex flex-column flex-row-ns justify-between items-center-ns`}>
+                            All your favourite apps and tools, integrated with Ghost.
+                            <Link to="/integrations/" className="blue link din nb1 mt2 mt0-ns hover-underline-blue">
+                                <span className="flex items-center fw5">Browse all integrations <Icon name="arrow-right" className="w3 h3 ml1 fill-blue" /></span>
+                            </Link>
+                        </p>
+                        <div className="grid-integrations-index mt4 mt6-l f8">
+                            <Box to="/integrations/zapier/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/zapier.png" alt="Zapier" />
+                                Zapier
+                            </Box>
+                            <Box to="/integrations/disqus/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/disqus.svg" alt="Disqus" />
+                                Disqus
+                            </Box>
+                            <Box to="/integrations/slack/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/slack.png" alt="Slack" />
+                                Slack
+                            </Box>
+                            <Box to="/integrations/unsplash/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/unsplash.svg" alt="Unsplash" />
+                                Unsplash
+                            </Box>
+                            <Box to="/integrations/google/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/google-analytics-1.png" alt="Google Analytics" />
+                                Google Analytics
+                            </Box>
+                            <Box to="/integrations/mailchimp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/mailchimp.png" alt="Mailchimp" />
+                                Mailchimp
+                            </Box>
+                            <Box to="/integrations/google-amp/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn tc" elevation="2" radius="4">
+                                <img className="w10 mb1" src="https://res.cloudinary.com/tryghost/image/fetch/w_120,h_100,c_fit/https://docs.ghost.io/content/images/2018/09/amp.jpg" alt="Google AMP" />
+                                Google AMP
+                            </Box>
+                            <Box to="/integrations/" className="flex flex-column justify-between items-center middarkgrey pa2 pt5 pb5 tdn" elevation="2" radius="4">
+                                <Icon name="more" className="w8 nudge-top--6" />
+                                See More
+                            </Box>
+                        </div>
+                    </section> */}
                 </div>
-              </section>
-              <hr
-                css={{
-                  height: 1,
-                  marginBottom: -1,
-                  border: 'none',
-                  borderBottom: `1 solid ${colors.divider}`,
-                }}
-              />
-              <section css={sectionStyles}>
-
-              {/* Don't query `allExampleCode`. This section ought to be replaced. */}
-
-                {/* <div id="examples">
-                  {examples.edges.map(({node}, index) => {
-                    const snippet = code[node.fileAbsolutePath];
-                    return (
-                      <CodeExample
-                        key={index}
-                        id={snippet.id}
-                        code={snippet.code}
-                        containerNodeID={node.frontmatter.domid}
-                        loaded={babelLoaded}>
-                        <h3 css={headingStyles}>{node.frontmatter.title}</h3>
-                        <div dangerouslySetInnerHTML={{__html: node.html}} />
-                      </CodeExample>
-                    );
-                  })}
-                </div> */}
-              </section>
-            </div>
-          </Container>
-
-          <section
-            css={{
-              background: colors.dark,
-              color: colors.white,
-              paddingTop: 45,
-              paddingBottom: 45,
-            }}>
-            <Container>
-              <Flex valign="center" style={{justifyContent: 'center'}}>
-                {/* <CtaItem> */}
-                  <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
-                  </ButtonLink>
-                {/* </CtaItem> */}
-                {/* <CtaItem>
-                  <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
-                  </ButtonLink>
-                </CtaItem> */}
-              </Flex>
-            </Container>
-          </section>
-        </div>
-      </Layout>
-    );
-  }
+            </Layout>
+        </>
+    )
 }
 
-Home.propTypes = {
-  data: PropTypes.shape({
-    examples: PropTypes.object.isRequired,
-    marketing: PropTypes.object.isRequired,
-  }).isRequired,
-};
+HomePage.propTypes = {
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                siteUrl: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
+    location: PropTypes.shape({
+        pathname: PropTypes.string.isRequired,
+    }).isRequired,
+}
 
-const CtaItem = ({children, primary = false}) => (
-  <div
-    css={{
-      width: '50%',
+export default HomePage
 
-      [media.between('small', 'large')]: {
-        paddingLeft: 20,
-      },
-
-      [media.greaterThan('xlarge')]: {
-        paddingLeft: 40,
-      },
-
-      '&:first-child': {
-        textAlign: 'right',
-        paddingRight: 15,
-      },
-
-      '&:nth-child(2)': {
-        [media.greaterThan('small')]: {
-          paddingLeft: 15,
-        },
-      },
-    }}>
-    {children}
-  </div>
-);
-
-/**
- * Missing? (3rd)
- * 
- *     codeExamples: allExampleCode {
-      edges {
-        node {
-          id
-          code
-          mdAbsolutePath
-        }
-      }
-    }
- */
 export const pageQuery = graphql`
-  query IndexMarkdown {
-    examples: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//home/examples//"}}
-      sort: {fields: [frontmatter___order], order: ASC}
-    ) {
-      edges {
-        node {
-          fileAbsolutePath
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            domid
-          }
-          html
+    query {
+        site {
+            ...SiteMetaFields
         }
-      }
     }
-    marketing: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//home/marketing//"}}
-      sort: {fields: [frontmatter___order], order: ASC}
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-          }
-          html
-        }
-      }
-    }
-  }
-`;
-
-export default Home;
-
-const sectionStyles = {
-  marginTop: 20,
-  marginBottom: 15,
-
-  [media.greaterThan('medium')]: {
-    marginTop: 60,
-    marginBottom: 65,
-  },
-};
-
-const headingStyles = {
-  '&&': {
-    marginBottom: 20,
-  },
-};
+`
