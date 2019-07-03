@@ -1,0 +1,66 @@
+import TextLoop from "react-text-loop";
+
+import Layout from '../components/layout'
+import Banner from '../components/banner'
+import Tiles from '../components/tiles'
+import PerfComparisonChart from "../components/perf"
+
+export default Layout
+
+export const fullwidth = true
+
+<Banner>
+
+<h1 style="color: #f7bd35;">Packem</h1>
+
+<div style="font-weight: 300;font-size: 23px;margin-bottom: 1.5rem;">A precompiled <TextLoop>
+                    <span>JavaScript module</span>
+                    <span>HTML</span>
+                    <span>Markdown</span>
+                    <span>SASS</span>
+                    <span>CSS</span>
+                    <span>static assets</span>
+                </TextLoop>{" "}bundler</div>
+
+[Documentation](/getting-started)
+[GitHub](https://github.com/packem/packem)
+
+</Banner>
+
+<Tiles>
+
+- ## Extremely Fast
+  Packem is **+2X faster than Parcel (with multicore compilation)**.
+  It leverages **close-to-the-metal** Rust bindings to achieve zero-cost
+  abstractions and fearless concurrency. The runtime context uses
+  [`node-worker-farm`](https://github.com/rvagg/node-worker-farm)
+  for distributive multithreading on larger module graphs.
+
+- ## Safe Binaries
+  Packem is precompiled into safe and efficient binaries. The upcoming *v1.0 stable* is
+  expected to implement most parts of the runtime context in Rust, hence improved
+  speeds.
+
+- ## Versatile Plugin System
+  A comprehensive *class-based* approach is used to instantiate and rehydrate plugins into the bundling cycle.
+  The `PackemEventDispatcher` API can be used to manage internal event hooks and create custom ones during build time.
+
+</Tiles>
+
+---
+
+<h2 style="text-align: center;">Performance Comparisons</h2>
+<p style="text-align: center;">
+    This is a performance comparison between Packem and a few other common bundlers based on [lodash v4.17](https://github.com/bukharim96/packem-lodash-test#packem-lodash-test). The host machine's specs can be found [here]().
+</p>
+
+<Tiles>
+
+- ### Parcel (v1.12.3) vs Packem (pre-alpha)
+    <iframe src="https://player.vimeo.com/video/327818295" width="100%" height="350" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+- ### Initial Build Time
+    This graph shows the results extended with webpack (lower is better).
+    <PerfComparisonChart type="INITIAL_BUILD_TIME" />
+
+</Tiles>
