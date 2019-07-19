@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Operator Mono;
+  src: url(../../static/operator-mono/OperatorMono-Book.otf);
+}
+
 h2:hover a.permalink,
 h3:hover a.permalink,
 h4:hover a.permalink,
@@ -11,8 +16,9 @@ pre {
   border: 1px solid #e8e5e5;
 }
 
-code.language-text {
-  font-weight: 500 !important;
+pre code {
+  font-weight: normal !important;
+  padding: 0 !important;
 }
 
 #content > p:first-of-type {

@@ -11,8 +11,8 @@ import {
 } from 'recharts';
 
 const data = [
-  {name: '#1', "webpack (4.35.0)": 9.77, "Packem (pre-alpha)": 4.23, "Parcel (1.12.3)": 11.01},
-  {name: '#2', "webpack (4.35.0)": 8.36, "Packem (pre-alpha)": 5.12, "Parcel (1.12.3)": 12.39},
+  {name: '#1', "webpack (4.35.0)": 8.36, "Packem (pre-alpha)": 5.12, "Parcel (1.12.3)": 12.39},
+  {name: '#2', "webpack (4.35.0)": 9.77, "Packem (pre-alpha)": 4.23, "Parcel (1.12.3)": 11.01},
   {name: '#3', "webpack (4.35.0)": 8.91, "Packem (pre-alpha)": 4.55, "Parcel (1.12.3)": 11.80},
   {name: '#4', "webpack (4.35.0)": 9.03, "Packem (pre-alpha)": 4.49, "Parcel (1.12.3)": 12.22},
   {name: '#5', "webpack (4.35.0)": 9.00, "Packem (pre-alpha)": 4.90, "Parcel (1.12.3)": 12.40},

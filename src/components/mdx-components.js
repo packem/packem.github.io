@@ -38,13 +38,17 @@ export default {
   h5: heading('h5'),
   h6: heading('h6'),
   img: props => (
-    <ReactMediumImg
+    // <ReactMediumImg
+    //   {...props}
+    //   style={{width: 'inherit', zIndex: '9', margin: '20px 0'}}
+    // />
+    <img
       {...props}
-      style={{width: 'inherit', zIndex: '9', margin: '20px 0'}}
+      style={{width: 'inherit', margin: '20px 0'}}
     />
   ),
-  pre: props => <pre {...props} style={{margin: '25px 0'}} />,
   a: props => <a {...props} style={{textDecoration: 'none'}} />,
+  pre: props => <pre {...props} style={{margin: '25px 0'}} />,
   code: props => (
     <code
       {...props}
@@ -52,8 +56,7 @@ export default {
         backgroundColor: '#f3eeed',
         padding: '2px 5px',
         borderRadius: 3,
-        fontFamily: "'Operator Mono', 'Dank Mono', monospace",
-        fontWeight: 300,
+        fontFamily: "'Operator Mono', monospace",
       }}
     />
   ),
