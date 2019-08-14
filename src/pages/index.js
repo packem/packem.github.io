@@ -1,4 +1,3 @@
-import TextLoop from "react-text-loop";
 import ButtonLink from 'components/ButtonLink';
 import Container from 'components/Container';
 import Flex from 'components/Flex';
@@ -111,14 +110,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A precompiled{" "}<TextLoop>
-                    <span>JavaScript module</span>
-                    <span>HTML</span>
-                    <span>Markdown</span>
-                    <span>SASS</span>
-                    <span>CSS</span>
-                    <span>static assets</span>
-                </TextLoop>{" "}bundler
+                    A precompiled JavaScript module bundler
                   </p>
                   <Flex
                     valign="center"
