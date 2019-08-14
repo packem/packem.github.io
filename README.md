@@ -1,21 +1,9 @@
-# packem.github.io
+# Packem Documentation Site
 
-This repo hosts Packem's site.
+This is a remote clone of React's site which was heavily changed to fit our needs. That apart, it is a WIP. React's site [provides a README with details of setting up](https://github.com/reactjs/reactjs.org). None of the instructions was distorted. Follow the instructions along to contribute to Packem's site.
 
-## Deploy steps
-
-### Pushing to `dev` branch
-
-Run `git push -f --set-upstream origin dev` in the `dev` branch to push remote refs up. To checkout the `dev` branch, run `git checkout -b dev`.
-
-### Deploying
-
-GitHub Pages needs to push public content to the `master` branch that's why a seperate branch is used for pushing non-static files. Finally, run the following command (available in the `package.json`) in the `dev` branch:
+## Clone the `dev` branch
 
 ```bash
-# Shorthand
-$ npm run deploy
-
-# Longer version
-$ gatsby build && gh-pages -d public -b master
+git clone --single-branch --branch <branchname> host:/dir.git
 ```
