@@ -8,7 +8,7 @@
 // NOTE: We can't just use `location.toString()` because when we are rendering
 // the SSR part in node.js we won't have a proper location.
 const urlRoot = 'https://reactjs.org';
-const version = '0.1.3';
+const version = '0.2.0';
 
 export {
   urlRoot,

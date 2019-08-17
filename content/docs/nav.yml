@@ -9,14 +9,22 @@
 #           - id: your-file # Link to file
 #             title: ASubTitle # SubItem title
 
-- title: Introduction
+- title: Core Concepts
   items:
-    - id: roadmap
-      title: Roadmap
     - id: getting-started
       title: Getting Started
     - id: extended-configurations
       title: Extended Configurations
+    - id: inputs
+      title: Inputs
+    - id: modes
+      title: Modes
+    - id: output-formats
+      title: Output Formats
+    - id: runtimes
+      title: Runtimes
+    - id: code-splitting
+      title: Code Splitting
 - title: Plugin System
   items:
     - id: plugin-system
@@ -28,14 +36,14 @@
 - title: Advanced Concepts
   isOrdered: true
   items:
-    - id: execution-contexts
-      title: Execution Contexts
+    - id: bundling-contexts
+      title: Bundling Contexts
     - id: the-module-graph
       title: The Module Graph
-    - id: atomic-modules
-      title: Atomic Modules
-    - id: code-splitting
-      title: Code Splitting
+- title: Extras
+  items:
+    - id: roadmap
+      title: Roadmap
 # - title: Main Concepts
 #   isOrdered: true
 # - title: Advanced Guides

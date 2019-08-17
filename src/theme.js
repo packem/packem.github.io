@@ -13,9 +13,9 @@ import hex2rgba from 'hex2rgba';
 
 const colors = {
   lighter: '#373940', // light blue
-  dark: '#221f15', // dark blue
+  dark: '#221f15', // dark blue (221f15) -> light grey
   darker: '#17150e', // really dark blue
-  brand: '#f7bd35', // electric blue
+  brand: '#f7bd35', // electric blue -> Packem gold
   brandLight: '#f5c658', // links
   text: '#1a1a1a', // very dark grey / black substitute
   subtle: '#6d6d6d', // light grey for text

@@ -47,9 +47,9 @@ class PuppyPlugin extends PackemPlugin {
 module.exports = PuppyPlugin;
 ```
 
-## Adding a plugin to `packem.config.yml`
+## Adding a plugin to `.packemrc`
 
-One last step to avail your plugin to a project is adding it to the configuration file. In the `packem.config.yml`, add the following then run the command `packem` in the terminal:
+One last step to avail your plugin to a project is adding it to the configuration file. In the `.packemrc`, add the following then run the command `packem` in the terminal:
 
 ```yml
 root: ./src/index.js

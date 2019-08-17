@@ -20,7 +20,7 @@ There are a few procedures that one needs to take into account to **create**, **
 
 - Your plugin's package name (i.e. in the `package.json`) must be in the form `packem-<name>-plugin` where `<name>` (without the angle brackets) is your plugin name.
 - Your package must export **ONLY ONE** class that extends `PackemPlugin`.
-- All plugins fall under the `plugins` field in the config, relative to `root`, `output` and `transformer`.
+- All plugins fall under the `plugins` field in the config, relative to `input`, `output` and `transformer`.
 - If a plugin is defined in the config _and is listed to be a common plugin_, it must follow the format `<name>-plugin`. A common plugin is any plugin under the packem scope on npm like `@packem/dev-plugin`, `@packem/file-plugin`. You can find more about common plugins [here](https://github.com/packem/packem/blob/master/docs/common-plugins.md).
 - If a plugin is defined in the config _and is custom_, it must follow the format `packem-<name>-plugin`. Packem can pick this from your plugin's `package.json`. This means your plugin's class doesn't need to follow any format so this is fine.
 
@@ -85,7 +85,7 @@ This event is dispatched before the module graph is generated.
 
 ### The `ConfigurationObject`
 
-The configuration object is a slightly modified version of `packem.config.yml`. It includes a few extra fields.
+The configuration object is a slightly modified version of `.packemrc`. It includes a few extra fields.
 
 ```typescript
 interface ConfigurationObject {
@@ -96,7 +96,8 @@ interface ConfigurationObject {
   output: string;
   // Absolute path to the root module.
   rootPath: string;
-  // Absolute path to the output bundle.
+  // Absolute path to the output bundle. This defaults to `path.resolve(__dirname, "./build")`
+  // i.e. a relative directory (`build`) is used if the output field is not defined in the config.
   outputPath: string;
   // Absolute path to the output bundle's directory.
   // If the output path is `./dist/bundle.js`, the equivalent
@@ -163,7 +164,7 @@ onBeforeTransform(mod: ModuleInterface) {
 
 ### `onAfterTransform`
 
-**Parameters:** `transformedCode: string`. A transformed version of the input files.
+**Parameters:** `mod: ModuleInterface`. A abstract definition of a module in the graph.
 
 **Returns:** `void`.
 
@@ -178,6 +179,10 @@ onAfterTransform(transformedCode: string) {
 
 ### `onSuccess`
 
+> Note
+>
+> Since *v0.2*, this event was removed in favor of `onBundleComplete`.
+
 **Parameters:** None.
 
 **Returns:** `void`.
@@ -190,9 +195,29 @@ onSuccess() {
 }
 ```
 
+### `onBundleComplete`
+
+**Parameters:** `config: ConfigurationObject`, `moduleGraph: ModuleGraph`. The `config` parameter is a transformed version of `.packemrc` exhibiting [this format](https://github.com/packem/packem/blob/master/docs/the-plugin-system.md#the-configurationobject). The `moduleGraph` parameter is an alias for `Map<string, ModuleInterface>`.
+
+**Returns:** `void`.
+
+After every core process is complete, this event is dispatched.
+
+```typescript
+onEnd(config: ConfigurationObject) {
+  // All core process are complete. Only plugins or child
+  // processes are expected to be running.
+  console.log(config);
+}
+```
+
 ### `onEnd`
 
-**Parameters:** `config: ConfigurationObject`. A transformed version of `packem.config.yml` exhibiting [this format](https://github.com/packem/packem/blob/master/docs/the-plugin-system.md#the-configurationobject).
+> Note
+>
+> This API is deprecated since *v0.2*.
+
+**Parameters:** `config: ConfigurationObject`. A transformed version of `.packemrc` exhibiting [this format](https://github.com/packem/packem/blob/master/docs/the-plugin-system.md#the-configurationobject).
 
 **Returns:** `void`.
 

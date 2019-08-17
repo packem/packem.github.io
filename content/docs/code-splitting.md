@@ -44,7 +44,7 @@ In Packem, a dynamically imported module retains its own sub-graph in the module
 
 ```typescript
 export default [
-  // In essence, Packem fails without the `root` field being defined
+  // In essence, Packem fails without the `input` field being defined
   // in the configuration file.
   {
     id: "root",

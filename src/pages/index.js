@@ -130,7 +130,7 @@ class Home extends Component {
                     </CtaItem>
                     <CtaItem>
                       {/* Update link */}
-                      <ButtonLink to="/docs/execution-contexts.html" type="secondary">
+                      <ButtonLink to="/docs/bundling-contexts.html" type="secondary">
                         Advanced Guide
                       </ButtonLink>
                     </CtaItem>

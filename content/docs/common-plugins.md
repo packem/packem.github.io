@@ -34,7 +34,7 @@ Currently, raw file processing is done only for the following extensions:
 
 ### Usage
 
-Add `file-plugin: on` to the `plugins` section in `packem.config.yml`.
+Add `file-plugin: on` to the `plugins` section in `.packemrc`.
 
 ## `@packem/dev-plugin`
 
@@ -72,7 +72,7 @@ plugins:
 
 Allows all-in-one styling with PostCSS, SASS/SCSS and LESS.
 
-> **Note**: Currently, SASS/SCSS is supported only.
+> Note: Currently, SASS/SCSS is supported only.
 
 ### Usage
 
